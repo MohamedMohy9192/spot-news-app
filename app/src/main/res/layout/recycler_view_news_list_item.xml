@@ -13,7 +13,10 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:contentPadding="16dp">
+        android:layout_marginTop="8dp"
+
+        app:cardCornerRadius="6dp"
+        app:cardElevation="6dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/souce_name_text_view"
@@ -24,6 +27,8 @@
                 android:id="@+id/article_source_text_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:ellipsize="end"
                 android:lines="1"
                 android:text="@{article.source.name}"
@@ -47,6 +52,7 @@
                 android:id="@+id/article_title_text_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:ellipsize="end"
                 android:lines="2"
@@ -61,7 +67,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="@{article.publishedAt}"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/article_title_text_view"
                 tools:text="2022-04-07T16:09:30Z" />
