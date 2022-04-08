@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.androidera.spotnews.adapter.TopHeadlinesAdapter
 import com.androidera.spotnews.databinding.FragmentTopHeadlinesNewsBinding
 
 class TopHeadlinesNewsFragment : Fragment() {
@@ -30,8 +31,10 @@ class TopHeadlinesNewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val adapter = TopHeadlinesAdapter()
+        binding.topHeadlinesRecyclerView.adapter = adapter
         viewModel.topHeadlinesNews.observe(viewLifecycleOwner) { newsResponse ->
-            binding.resultTextView.text = newsResponse.status
+            adapter.submitList(newsResponse.articles)
         }
     }
 
