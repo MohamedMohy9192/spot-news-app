@@ -1,5 +1,6 @@
 package com.androidera.spotnews
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -20,9 +21,13 @@ class TopHeadlinesViewModel(
     private fun getTopHeadlinesNews() = viewModelScope.launch {
         try {
             _topHeadlinesNews.value = repository.topHeadlinesNews()
-        } catch (exception: Exception) {
-
+        } catch (e: Exception) {
+            Log.e(TAG, e.message.toString(), e)
         }
+    }
+
+    companion object {
+        const val TAG = "TopHeadlinesViewModel"
     }
 
 }
