@@ -1,5 +1,6 @@
 package com.androidera.spotnews.network
 
+import com.androidera.spotnews.model.NewsResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query

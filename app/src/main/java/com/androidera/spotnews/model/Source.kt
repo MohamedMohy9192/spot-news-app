@@ -1,4 +1,4 @@
-package com.androidera.spotnews.network
+package com.androidera.spotnews.model
 
 data class Source(
     val id: String,
